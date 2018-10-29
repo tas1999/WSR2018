@@ -1,0 +1,133 @@
+﻿<Window x:Class="WSR2018.RegisterAsARunnerFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="RegisterAsARunnerFormWindow" MinHeight="450" MinWidth="800" Width="787">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Регистрация бегуна</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+            Пожалуйста заполните всю информацию, 
+            чтобы зарегистрироваться в качестве бегуна
+        </TextBlock>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Email:</TextBlock>
+            <TextBlock Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Пароль:</TextBlock>
+            <TextBlock Grid.Row="4"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Повторите пароль:</TextBlock>
+            <TextBlock Grid.Row="6"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Имя:</TextBlock>
+            <TextBlock Grid.Row="8"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Фамилия:</TextBlock>
+            <TextBlock Grid.Row="10"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Пол:</TextBlock>
+            <TextBox Name="EmailTBox" Grid.Row="0"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Email</TextBox>
+            <TextBox Name="PasswordTBox" Grid.Row="2"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Пароль</TextBox>
+            <TextBox Name="ReturnPasswordTBox" Grid.Row="4"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Повторите пароль</TextBox>
+            <TextBox Name="NameTBox" Grid.Row="6"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Имя</TextBox>
+            <TextBox Name="SurnameTBox" Grid.Row="8"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Фамилия</TextBox>
+            <ComboBox Name="GenderCBox" Grid.Row="10"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" SelectedIndex="0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Gender}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
+                <Image Name="PhotoImage" Grid.Column="1"/>
+                <TextBlock Grid.Row="1"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,8,0,8" Foreground="#FF6D6D6D" FontSize="20" Height="27" Width="102">Фото файл:</TextBlock>
+                <TextBox Name="PhotoPathTBox" Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#FF6D6D6D" FontSize="20" GotFocus="GotAllFocus" LostFocus="LostAllFocus" Height="30" Margin="0,7">Photo_logo.jpg</TextBox>
+                <Button Name="SelectPathPhoto" Style="{StaticResource BaseButtonStyle}" FontSize="15"  Margin="6" Grid.Row="2" Grid.Column="1" Click="SelectPathPhoto_Click">Просмотр...</Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Дата рождения:</TextBlock>
+                <TextBlock Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Страна:</TextBlock>
+                <DatePicker Name="DateOfBirthTBox" Grid.Row="0"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200"  ></DatePicker>
+                <ComboBox Name="CoutryCBox" Grid.Row="2"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" SelectedIndex="0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=CountryName}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="RegistrBtn" Style="{StaticResource BaseButtonStyle}" FontSize="15" Height="30" Margin="6" Width="100" Grid.Row="2" Grid.Column="1" Click="RegistrBtn_Click" >Регистрация</Button>
+            <Button Name="CancelBtn" Style="{StaticResource BaseButtonStyle}" FontSize="15" Height="30" Margin="6" Width="60" Grid.Row="2" Grid.Column="3" Click="CancelBtn_Click">Отмена</Button>
+
+        </Grid>
+    </Grid>
+</Window>

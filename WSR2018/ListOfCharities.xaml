@@ -1,0 +1,45 @@
+﻿<Window x:Class="WSR2018.ListOfCharities"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="ListOfCharities" Height="450" Width="723.614">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Список благотварительных организаций</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="9" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+            Это - список всех благотворительных учереждений, которые поддерживаются в Marathon Skills 2016. 
+            Спасибо за помощь вы поддерживаете их, спонсируя бегунов
+        </TextBlock>
+        <ListView BorderThickness="0" Name="FondList" Grid.Row="6" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="600"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Height="100" Grid.RowSpan="2" Source="{Binding Path=CharityLogo}"/>
+                        <TextBlock Grid.Column="1" FontWeight="Bold" TextWrapping="Wrap" Text="{Binding Path=CharityName}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=CharityDescription}" TextWrapping="Wrap"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

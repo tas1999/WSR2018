@@ -1,0 +1,31 @@
+﻿<Window x:Class="WSR2018.RegisterAsARunnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="RegisterAsARunnerWindow" Height="381.429" Width="800">
+    <Grid Name="MainContent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition MinHeight="20"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition MinHeight="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="2" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2" Click="LoginBtn_Click">Я учавствовал ранее</Button>
+        <Button Name="INewBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="4" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2" Click="INewBtn_Click" >Я новый участник</Button>
+        <Button Name="LoginBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="5" Grid.Column="3" Background="#FFF2F2F2" Click="LoginBtn_Click">Login</Button>
+    </Grid>
+</Window>

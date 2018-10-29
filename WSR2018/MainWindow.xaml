@@ -6,41 +6,51 @@
         xmlns:local="clr-namespace:WSR2018"
         mc:Ignorable="d"
         Title="MainWindow" Height="750" Width="800">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition />
+            <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="0.4*"/>
-            <ColumnDefinition Width="90"/>
-            <ColumnDefinition Width="15"/>
-        </Grid.ColumnDefinitions>
-        <Border Grid.RowSpan="6" Grid.ColumnSpan="5" Background="#FF535353"></Border>
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold">MARATHON SKILLS 2016</TextBlock>
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFCCCCCC" FontSize="30" FontStyle="Italic">Москва, Россия</TextBlock>
-        <TextBlock Grid.Row="4" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFCCCCCC" FontSize="30" FontStyle="Italic">среда 21 октября 2016</TextBlock>
-        <Button Grid.Row="7" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2">Я хочу стать бегуном</Button>
-        <Button Grid.Row="9" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2">Я хочу стать спонсором бегуна</Button>
-        <Button Grid.Row="11" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2">Я хочу узнать больше о событии</Button>
-        <Button Grid.Row="12" Grid.Column="3" Background="#FFF2F2F2">Login</Button>
         <Border Background="#FF535353" Grid.ColumnSpan="5" Grid.Row="14" >
             <TextBlock Name="TimerTBox" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White">18 дней 8 часов и 17 минут до старта марафона!</TextBlock>
         </Border>
+        <Grid Name="main">
+            <Grid Name="MainContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.RowSpan="6" Grid.ColumnSpan="5" Background="#FF535353"></Border>
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold">MARATHON SKILLS 2016</TextBlock>
+                <TextBlock Grid.Row="3" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFCCCCCC" FontSize="30" FontStyle="Italic">Москва, Россия</TextBlock>
+                <TextBlock Grid.Row="4" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFCCCCCC" FontSize="30" FontStyle="Italic">среда 21 октября 2016</TextBlock>
+                <Button Name="RunnerBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="7" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2" Click="RunnerBtn_Click">Я хочу стать бегуном</Button>
+                <Button Name="SponsorBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="9" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2" Click="SponsorBtn_Click">Я хочу стать спонсором бегуна</Button>
+                <Button Name="InfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="11" FontSize="30" Margin="150,0,150,0" Grid.ColumnSpan="5" Background="#FFF2F2F2" Click="InfoBtn_Click">Я хочу узнать больше о событии</Button>
+                <Button Name="LoginBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="12" Grid.Column="3" Background="#FFF2F2F2" Click="LoginBtn_Click">Login</Button>
+            </Grid>
+        </Grid>
     </Grid>
+
+
 </Window>

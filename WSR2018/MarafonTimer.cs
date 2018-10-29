@@ -19,7 +19,7 @@ namespace WSR2018
         public void Start()
         {
             var timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 1, 0);
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += (o, arg) =>
             {
                 var time = MarafonTime - DateTime.Now;

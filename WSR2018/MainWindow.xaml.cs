@@ -26,8 +26,42 @@ namespace WSR2018
             InitializeComponent();
             var timer =  new MarafonTimer(TimerTBox);
             timer.Start();
+
+        }
+        /// <summary>
+        /// Обработчик события нажатия кнопки "Я хочу стать спонсором бегуна"
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Аргументы события</param>
+        private void SponsorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.Start(this);
             var nt = new SponsorARunnerWindow();
-            nt.ShowDialog();
+            WindowsControler.GoTo(nt);
+
+        }
+        private void InfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.Start(this);
+            var nt = new FindOutMoreInformation();
+            WindowsControler.GoTo(nt);
+        }
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.Start(this);
+            var nt = new Login();
+            WindowsControler.GoTo(nt);
+        }
+        /// <summary>
+        /// Обработчик события нажатия кнопки "Я хочу стать бегуном"
+        /// </summary>
+        /// <param name="sender">Источник события</param>
+        /// <param name="e">Аргументы события</param>
+        private void RunnerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.Start(this);
+            var nt = new RegisterAsARunnerWindow();
+            WindowsControler.GoTo(nt);
         }
     }
     

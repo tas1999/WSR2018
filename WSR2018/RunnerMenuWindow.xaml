@@ -1,0 +1,75 @@
+﻿<Window x:Class="WSR2018.RunnerMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="RunnerMenuWindow" Height="679" Width="800">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition MinHeight="80"/>
+        <RowDefinition Height="20"/>
+        <RowDefinition MinHeight="80"/>
+        <RowDefinition Height="20"/>
+        <RowDefinition MinHeight="80"/>
+        <RowDefinition Height="20"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition Width="350"/>
+        <ColumnDefinition Width="10"/>
+        <ColumnDefinition Width="350"/>
+        <ColumnDefinition Width="1.01*"/>
+    </Grid.ColumnDefinitions>
+    <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMain}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Меню бегуна</TextBlock>
+    <Button Name="RegistOnM" Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="1" FontSize="30" Background="#FFF2F2F2" Click="RegistOnM_Click">Регистрация на марафон</Button>
+    <Button Name="MyStatistic" Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" Click="MyStatistic_Click">Мои результаты</Button>
+        <Button Name="EditProfle" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="1" FontSize="30" Background="#FFF2F2F2" Click="EditProfle_Click">
+            <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="9" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" TextAlignment="Center" TextWrapping="Wrap"> 
+            Редактирование профеля
+            </TextBlock> </Button>
+    <Button Name="FondInfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" >
+        Мой спонсор
+    </Button>
+
+    <Button Name="Contact" Style="{StaticResource BaseButtonStyle}" Grid.Row="8" Grid.Column="1" FontSize="30" Background="#FFF2F2F2" Click="Contact_Click">Контакты</Button>
+        <Popup x:Name="InfoPopup" StaysOpen="True" PlacementTarget="{Binding ElementName=MainGrid}" Placement="Center" VerticalAlignment="Bottom" MaxWidth="580">
+            <Border Background="White" BorderThickness="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition />
+                        <RowDefinition Height="10"/>
+                        <RowDefinition />
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" FontSize="30">Контакты</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" FontSize="20">Для получ дополнительной информации пожалуйста свяжитесь с координаторами</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="1" FontSize="20"><TextBlock FontWeight="Bold">Телефон:</TextBlock><TextBlock>+55 11 99 88 77 66</TextBlock></TextBlock>
+                    <TextBlock Grid.Row="8" Grid.Column="1" FontSize="20"><TextBlock FontWeight="Bold">Email:</TextBlock><TextBlock>coordinators@maratjon skils.org</TextBlock></TextBlock>
+                    <Button Name="Close" Grid.Row="1" Grid.Column="3" Foreground="Red" Background="White" BorderThickness="0" FontSize="20" Click="Close_Click">x</Button>
+                </Grid>
+            </Border>
+            
+        </Popup>
+
+    </Grid>
+</Window>

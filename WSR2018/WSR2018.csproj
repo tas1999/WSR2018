@@ -55,9 +55,102 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutMarathonSkillsWindow.xaml.cs">
+      <DependentUpon>AboutMarathonSkillsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorMenuWindow.xaml.cs">
+      <DependentUpon>AdministratorMenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorMenuWindow.xaml.cs">
+      <DependentUpon>CoordinatorMenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditRunnerProfileWindow.xaml.cs">
+      <DependentUpon>EditRunnerProfileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindOutMoreInformation.xaml.cs">
+      <DependentUpon>FindOutMoreInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InventarWindow.xaml.cs">
+      <DependentUpon>InventarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfCharities.xaml.cs">
+      <DependentUpon>ListOfCharities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarathonSkillsBD.cs">
+      <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MarathonSkillsBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MyRaceResultsWindow.xaml.cs">
+      <DependentUpon>MyRaceResultsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterAsARunnerFormWindow.xaml.cs">
+      <DependentUpon>RegisterAsARunnerFormWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterAsARunnerWindow.xaml.cs">
+      <DependentUpon>RegisterAsARunnerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterForAnEventWindow.xaml.cs">
+      <DependentUpon>RegisterForAnEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationConfirmatinWindow.xaml.cs">
+      <DependentUpon>RegistrationConfirmatinWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunnerAndCountry.cs" />
+    <Compile Include="RunnerMenuWindow.xaml.cs">
+      <DependentUpon>RunnerMenuWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RunnnerResult.cs" />
+    <Compile Include="ServerController.cs" />
     <Compile Include="SponsorARunnerWindow.xaml.cs">
       <DependentUpon>SponsorARunnerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SponsorshipConfirmation.xaml.cs">
+      <DependentUpon>SponsorshipConfirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestDocumentWindow.xaml.cs">
+      <DependentUpon>TestDocumentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <Compile Include="WindowsControler.cs" />
+    <Page Include="AboutMarathonSkillsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdministratorMenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CoordinatorMenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditRunnerProfileWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindOutMoreInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InventarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfCharities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,7 +163,39 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyRaceResultsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterAsARunnerFormWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterAsARunnerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterForAnEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationConfirmatinWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RunnerMenuWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SponsorARunnerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SponsorshipConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestDocumentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,6 +219,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="MarathonSkillsBD.xsc">
+      <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
+    </None>
+    <None Include="MarathonSkillsBD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MarathonSkillsBD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MarathonSkillsBD.xss">
+      <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,6 +237,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\banco-banespa.jpg" />
+    <Resource Include="Img\ibirapuera-park-lake.jpg" />
+    <Resource Include="Img\marathon-image.jpg" />
+    <Resource Include="Img\teatro-municipal.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="WSR2018.FindOutMoreInformation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="FindOutMoreInformation" Height="450" Width="901.724">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition MinHeight="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition MinHeight="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition MinHeight="80"/>
+            <RowDefinition MinHeight="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition MinWidth="350"/>
+            <ColumnDefinition MinWidth="10"/>
+            <ColumnDefinition MinWidth="350"/>
+            <ColumnDefinition Width="1.01*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Подробная информация</TextBlock>
+
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">Marathon Skills 2016</Button>
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="3" FontSize="30" Background="#FFF2F2F2">Насколько долгий марафон</Button>
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">Предыдущие результаты</Button>
+        <Button Name="FondInfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" Click="FondInfoBtn_Click">
+            <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="9" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+            Список 
+            благотварительных 
+                оргинизаций
+            </TextBlock>
+        </Button>
+        
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="8" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">BMI калькулятор</Button>
+        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="8" Grid.Column="3" FontSize="30" Background="#FFF2F2F2">BMR калькулятор</Button>
+    </Grid>
+</Window>

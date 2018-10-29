@@ -4,6 +4,111 @@
              xmlns:local="clr-namespace:WSR2018"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="BaseButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF505050"/>
+            <Setter Property="Background" Value="#FFEBEBEB"/>
+
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="border"  CornerRadius="7" Background="{TemplateBinding Background}" BorderBrush="#FFB4B4B4" BorderThickness="1">
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="White"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FFB4B4B4"/>
+                                <Setter Property="BorderThickness" TargetName="border" Value="3"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FFEBEBEB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HatMain" TargetType="ContentControl">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="#FF535353">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button x:Name="BackMain" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="BackMain_Click" Content="Назад"/>
+                                    <TextBlock Margin="20" VerticalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold"><Run Text="MARATHON SKILLS 2016"/></TextBlock>
+                                    <Button x:Name="Logout" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="Logout_Click" Content="Logout"/>
+                                </StackPanel>
+                            </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HatMainWithoutLogout" TargetType="ContentControl">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="#FF535353">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Button x:Name="BackMain" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="BackMain_Click" Content="Назад"/>
+                                <TextBlock Margin="20" VerticalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold"><Run Text="MARATHON SKILLS 2016"/></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HatToInfoWithoutLogout" TargetType="ContentControl">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="#FF535353">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Button x:Name="Info" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="Info_Click" Content="Назад"/>
+                                <TextBlock Margin="20" VerticalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold" Text="MARATHON SKILLS 2016"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RunnerHatMain" TargetType="ContentControl">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="#FF535353">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Button x:Name="BackToRunner" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="BackToRunner_Click" Content="Назад"/>
+                                <TextBlock Margin="20" VerticalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold"><Run Text="MARATHON SKILLS 2016"/></TextBlock>
+                                <Button x:Name="Logout" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="Logout_Click" Content="Logout"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="AdminHatMain" TargetType="ContentControl">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border Background="#FF535353">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Button x:Name="BackToAdmin" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="BackToAdmin_Click"  Content="Назад"/>
+                                <TextBlock Margin="20" VerticalAlignment="Center" Foreground="White" FontSize="40" FontWeight="Bold"><Run Text="MARATHON SKILLS 2016"/></TextBlock>
+                                <Button x:Name="Logout" FontSize="20" Width="100" Margin="15" Height="36" Style="{StaticResource BaseButtonStyle}" Click="Logout_Click" Content="Logout"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
     </Application.Resources>
+    
 </Application>
