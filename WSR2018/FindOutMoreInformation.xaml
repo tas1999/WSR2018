@@ -27,7 +27,7 @@
             <ColumnDefinition Width="1.01*"/>
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Подробная информация</TextBlock>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Подробная информация</TextBlock>
 
         <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">Marathon Skills 2016</Button>
         <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="3" FontSize="30" Background="#FFF2F2F2">Насколько долгий марафон</Button>

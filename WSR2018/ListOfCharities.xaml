@@ -17,8 +17,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Список благотварительных организаций</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="9" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Список благотварительных организаций</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="9" Style="{StaticResource TextWrapStyle}"> 
             Это - список всех благотворительных учереждений, которые поддерживаются в Marathon Skills 2016. 
             Спасибо за помощь вы поддерживаете их, спонсируя бегунов
         </TextBlock>

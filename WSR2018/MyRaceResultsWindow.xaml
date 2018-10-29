@@ -30,7 +30,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="8"  Style="{StaticResource HatMainWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Мои результаты</TextBlock>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Мои результаты</TextBlock>
         <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
                 Это - список всех ваших прошлых результатов гонки для Marathon Skils.
         </TextBlock>
@@ -47,7 +47,7 @@
             <TextBlock FontWeight="Bold" Margin="0,0,5,0">Возрастная категория:</TextBlock>
             <TextBlock Name="OldTBlock">18-19</TextBlock>
         </StackPanel>
-        <DataGrid Name="StatisticDGrid" Grid.Row="10" Grid.ColumnSpan="3">
+        <DataGrid Name="StatisticDGrid" Grid.Row="10" Grid.ColumnSpan="3" CanUserSortColumns="False" IsReadOnly="True">
 
         </DataGrid>
         <Button Name="ViewAllBtn" Style="{StaticResource BaseButtonStyle}" Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#FF6D6D6D" FontSize="20" Click="ViewAllBtn_Click" >Показать все результаты</Button>

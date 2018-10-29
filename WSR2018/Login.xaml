@@ -31,15 +31,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="8"  Style="{StaticResource HatMainWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Форма Авторизации</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Форма Авторизации</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Style="{StaticResource TextWrapStyle}"> 
             Пожалуйста, 
             авторизуйтесь в системе, 
             используя ваш адрес электроной 
             почты и пароль.
         </TextBlock>
-        <TextBlock Grid.Row="6"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Email:</TextBlock>
-        <TextBlock Grid.Row="8"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Password:</TextBlock>
+        <TextBlock Grid.Row="6"  Grid.Column="1" Style="{StaticResource FormTextStyle}">Email:</TextBlock>
+        <TextBlock Grid.Row="8"  Grid.Column="1" Style="{StaticResource FormTextStyle}">Password:</TextBlock>
         <TextBox Name="EmailTBox" Grid.Row="6"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Enter your email addres</TextBox>
         <TextBox Name="PasswordTBox" Grid.Row="8"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Enter your password</TextBox>
         <Button Name="LoginBtn" Style="{StaticResource BaseButtonStyle}"  Grid.Column="3" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#FF6D6D6D" FontSize="20" Click="LoginBtn_Click" >Login</Button>

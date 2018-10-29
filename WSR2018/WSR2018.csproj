@@ -244,5 +244,8 @@
     <Resource Include="Img\marathon-image.jpg" />
     <Resource Include="Img\teatro-municipal.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\cross-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,7 +27,7 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Редактирование профеля</TextBlock>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11"  Style="{StaticResource TittleStyle}">Редактирование профеля</TextBlock>
         
         <Grid Grid.Row="6" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -49,11 +49,11 @@
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Email:</TextBlock>
-            
-            <TextBlock Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Имя:</TextBlock>
-            <TextBlock Grid.Row="4"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Фамилия:</TextBlock>
-            <TextBlock Grid.Row="6"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Пол:</TextBlock>
+            <TextBlock Grid.Row="0"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Email:</TextBlock>
+
+            <TextBlock Grid.Row="2"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Имя:</TextBlock>
+            <TextBlock Grid.Row="4"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Фамилия:</TextBlock>
+            <TextBlock Grid.Row="6"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Пол:</TextBlock>
             <TextBlock Name="EmailTBox" Grid.Row="0"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Email</TextBlock>
             <TextBox Name="NameTBox" Grid.Row="2"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Имя</TextBox>
             <TextBox Name="SurnameTBox" Grid.Row="4"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Фамилия</TextBox>
@@ -64,8 +64,8 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="8"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Дата рождения:</TextBlock>
-            <TextBlock Grid.Row="10"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Страна:</TextBlock>
+            <TextBlock Grid.Row="8"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Дата рождения:</TextBlock>
+            <TextBlock Grid.Row="10"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Страна:</TextBlock>
             <DatePicker Name="DateOfBirthTBox" Grid.Row="8"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200"  ></DatePicker>
             <ComboBox Name="CoutryCBox" Grid.Row="10"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" SelectedIndex="0">
                 <ComboBox.ItemTemplate>
@@ -106,8 +106,8 @@
                     <RowDefinition/>
                     <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="1" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Смена пароля</TextBlock>
-                <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"> 
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Смена пароля</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource TextWrapStyle}"> 
                     Оставте эти поля, незаполнеными,
                     если вы не хотите изменять пароль
                 </TextBlock>
@@ -125,8 +125,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBox Name="PasswordTBox" Grid.Row="1"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Пароль</TextBox>
                 <TextBox Name="ReturnPasswordTBox" Grid.Row="2"  Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF6D6D6D" FontSize="20" Width="200" GotFocus="GotAllFocus" LostFocus="LostAllFocus">Повторите пароль</TextBox>
-                <TextBlock Grid.Row="1"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Пароль:</TextBlock>
-                <TextBlock Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="#FF6D6D6D" FontSize="20">Повторите пароль:</TextBlock>
+                <TextBlock Grid.Row="1"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Пароль:</TextBlock>
+                <TextBlock Grid.Row="2"  Grid.Column="0" Style="{StaticResource FormTextStyle}">Повторите пароль:</TextBlock>
 
             </Grid>
         </Grid>

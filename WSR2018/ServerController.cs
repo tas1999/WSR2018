@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using WSR2018.MarathonSkillsBDTableAdapters;
 
 namespace WSR2018
@@ -16,8 +21,10 @@ namespace WSR2018
         static short yearMar = 2015;
         static UserTableAdapter userTableAdapter = new UserTableAdapter();
         static EventTableAdapter eventTableAdapter = new EventTableAdapter();
+        
         static GenderTableAdapter genderTableAdapter = new GenderTableAdapter();
         static RunnerTableAdapter runnerTableAdapter = new RunnerTableAdapter();
+        static ItemTableAdapter itemTableAdapter = new ItemTableAdapter();
         static CountryTableAdapter CountryTableAdapter = new CountryTableAdapter();
         static CharityTableAdapter charityTableAdapter = new CharityTableAdapter();
         static MarathonTableAdapter marathonTableAdapter = new MarathonTableAdapter();
@@ -27,6 +34,7 @@ namespace WSR2018
         static MarathonSkillsBD.EventDataTable eventDataTable = new MarathonSkillsBD.EventDataTable();
         static MarathonSkillsBD.GenderDataTable genderDataTable = new MarathonSkillsBD.GenderDataTable();
         static MarathonSkillsBD.RunnerDataTable runnerDataTable = new MarathonSkillsBD.RunnerDataTable();
+        static MarathonSkillsBD.ItemDataTable itemDataTable = new MarathonSkillsBD.ItemDataTable();
         static MarathonSkillsBD.CountryDataTable countryDataTable = new MarathonSkillsBD.CountryDataTable();
         static MarathonSkillsBD.CharityDataTable charityDataTable = new MarathonSkillsBD.CharityDataTable();
         static MarathonSkillsBD.MarathonDataTable marathonDataTable = new MarathonSkillsBD.MarathonDataTable();
@@ -284,5 +292,161 @@ namespace WSR2018
                 return "более 70";
             }
         }
+        static public DataGrid GetInventar(DataGrid dataGrid)
+        {
+            registrationTableAdapter.FillByYearHeldArgAndRaceKitOptionIdArg(registrationDataTable, yearMar, "A");
+            int selectTypA = registrationDataTable.Count;
+            registrationTableAdapter.FillByYearHeldArgAndRaceKitOptionIdArg(registrationDataTable, yearMar, "B");
+            int selectTypB = registrationDataTable.Count;
+            registrationTableAdapter.FillByYearHeldArgAndRaceKitOptionIdArg(registrationDataTable, yearMar, "C");
+            int selectTypC = registrationDataTable.Count;
+            itemTableAdapter.Fill(itemDataTable);
+            
+            Binding binding = new Binding("[0]");
+
+            dataGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Комплект",
+                Binding = new Binding("[0]"),
+                
+            });
+            dataGrid.Columns.Add(new DataGridTemplateColumn()
+            {
+                Header = "Тип А",
+                CellTemplate = ColumnDataTemplate("[1]")
+            });
+            dataGrid.Columns.Add(new DataGridTemplateColumn()
+            {
+                Header = "Тип B",
+                CellTemplate = ColumnDataTemplate("[2]")
+            });
+            dataGrid.Columns.Add(new DataGridTemplateColumn()
+            {
+                Header = "Тип C",
+                CellTemplate = ColumnDataTemplate("[3]")
+            });
+            dataGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Необходимо",
+                Binding = new Binding("[4]")
+            });
+            dataGrid.Columns.Add(new DataGridTextColumn()
+            {
+                Header = "Остаток",
+                Binding = new Binding("[5]")
+
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                "Выбрало данный вариант",
+                selectTypA.ToString(),
+                selectTypB.ToString(),
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                "0"
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[0].ItemName,
+                selectTypA.ToString(),
+                selectTypB.ToString(),
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[0].ItemCount.ToString()
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[1].ItemName,
+                selectTypA.ToString(),
+                selectTypB.ToString(),
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[1].ItemCount.ToString()
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[2].ItemName,
+                "ErrorImg",
+                selectTypB.ToString(),
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[2].ItemCount.ToString()
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[3].ItemName,
+                "ErrorImg",
+                selectTypB.ToString(),
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[3].ItemCount.ToString()
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[4].ItemName,
+                "ErrorImg",
+                "ErrorImg",
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[4].ItemCount.ToString()
+            });
+            dataGrid.Items.Add(new string[]
+            {
+                itemDataTable[5].ItemName,
+                "ErrorImg",
+                "ErrorImg",
+                selectTypC.ToString(),
+                selectTypA + selectTypB + selectTypC + "",
+                itemDataTable[5].ItemCount.ToString()
+            });
+            return dataGrid;
+        }
+        static public DataTemplate ColumnDataTemplate(string path)
+        {
+
+            Binding bindDateLecture = new Binding()
+            {
+                Path = new PropertyPath(path)
+            };
+
+            var DateDayWithDateLecture = new FrameworkElementFactory(typeof(TextBlock));
+            DateDayWithDateLecture.SetBinding(TextBlock.TextProperty, bindDateLecture);
+            DateDayWithDateLecture.SetValue(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Center);
+
+            DateDayWithDateLecture.SetValue(TextBlock.BackgroundProperty, new SolidColorBrush(Colors.White));
+            DateDayWithDateLecture.SetValue(TextBlock.HeightProperty, 40.0);
+            DateDayWithDateLecture.SetValue(TextBlock.WidthProperty, 100.0);
+            Style style = new Style();
+            
+            Trigger trigger = new Trigger()
+            {
+                Property = TextBlock.TextProperty,
+                Value = "ErrorImg"
+            };
+            trigger.Setters.Add(new Setter()
+            {
+                Property = TextBlock.VisibilityProperty,
+                Value = Visibility.Collapsed
+            });
+            style.Triggers.Add(trigger);
+
+            DateDayWithDateLecture.SetValue(TextBlock.StyleProperty, style);
+
+            var DateMonthWithNumberLectur = new FrameworkElementFactory(typeof(Image));
+            DateMonthWithNumberLectur.SetValue(Image.SourceProperty, 
+                new BitmapImage(new Uri(@"C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\cross-icon.png")));
+            DateMonthWithNumberLectur.SetValue(Image.HeightProperty, 30.0);
+            DateDayWithDateLecture.SetValue(Image.WidthProperty, 30.0);
+
+
+            var grid2FactoryField = new FrameworkElementFactory(typeof(Grid));
+            grid2FactoryField.AppendChild(DateMonthWithNumberLectur);
+            grid2FactoryField.AppendChild(DateDayWithDateLecture);
+            
+            DataTemplate gridFieldTemplate = new DataTemplate();
+            gridFieldTemplate.VisualTree = grid2FactoryField;
+            return gridFieldTemplate;
+        }
+
     }
 }

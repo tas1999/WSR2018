@@ -32,7 +32,7 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="8"  Style="{StaticResource HatToInfoWithoutLogout}"/>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF6D6D6D" FontSize="30">Информация о Marathon Skills 2016</TextBlock>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Информация о Marathon Skills 2016</TextBlock>
         <Grid Grid.Column="1" Grid.Row="4" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
@@ -53,7 +53,7 @@
             <Image Grid.Row="4" Grid.Column="2" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\teatro-municipal.jpg" Width="200"/>
         </Grid>
         <ScrollViewer Grid.Row="4" Grid.Column="3" Height="400">
-            <TextBlock Foreground="#FF6D6D6D" FontSize="20" TextWrapping="Wrap">
+            <TextBlock Foreground="#FF6D6D6D" Style="{StaticResource TextWrapStyle}">
                     О Marathon Skills 2016
 
                     Marathon Skills - фестиваль бега, проводимый каждый год в разных частях мира. Может быть три зачета: Полный Марафон, Полумарафон и  забег для новичков - таким образом фестиваль подходит всем.
