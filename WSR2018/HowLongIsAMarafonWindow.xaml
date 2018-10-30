@@ -26,10 +26,12 @@
         </Grid.ColumnDefinitions>
         <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatToInfoWithoutLogout}"/>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Поступление инвентаря</TextBlock>
-        <TabControl Name="HowLongTabControl" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Right">
-           
+        <TabControl Name="HowLongTabControl" Grid.Row="6" Grid.Column="1" HorizontalContentAlignment="Right" FlowDirection="RightToLeft">
+            
+                
+
         </TabControl>
 
-        
+
     </Grid>
 </Window>

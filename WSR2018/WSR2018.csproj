@@ -253,27 +253,61 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Img\banco-banespa.jpg" />
-    <Resource Include="Img\ibirapuera-park-lake.jpg" />
-    <Resource Include="Img\marathon-image.jpg" />
-    <Resource Include="Img\teatro-municipal.jpg" />
+    <Content Include="Img\banco-banespa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\ibirapuera-park-lake.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\marathon-image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\teatro-municipal.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Img\cross-icon.png" />
+    <Content Include="Img\cross-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Img\how-long-is-a-marathon-images\airbus-a380.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\bus.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\capybara.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\f1-car.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\football-field.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\horse.png" />
-    <Resource Include="Img\how-long-is-a-marathon-images\jaguar.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\pair-of-havaianas.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\ronaldinho.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\sloth.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\slug.jpg" />
-    <Resource Include="Img\how-long-is-a-marathon-images\worm.jpg" />
+    <Content Include="Img\how-long-is-a-marathon-images\airbus-a380.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\bus.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\capybara.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\f1-car.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\football-field.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\jaguar.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\pair-of-havaianas.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\ronaldinho.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\sloth.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\slug.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Img\how-long-is-a-marathon-images\worm.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

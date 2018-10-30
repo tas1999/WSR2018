@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -497,8 +498,9 @@ namespace WSR2018
         static public TabItem TabItemCreator(string Image, string Name, string Text )
         {
                 BitmapImage bitmapImage = new BitmapImage(
-                    new Uri(@"C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\how-long-is-a-marathon-images\"
-                            + Image));
+                    new Uri(Directory.GetCurrentDirectory() 
+                    + @"\Img\how-long-is-a-marathon-images\" 
+                    + Image));
                 TabItem tabItem = new TabItem();
                 StackPanel hederStackPanel = new StackPanel();
                 hederStackPanel.Orientation = Orientation.Horizontal;
