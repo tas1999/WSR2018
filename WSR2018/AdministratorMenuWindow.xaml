@@ -34,7 +34,7 @@
             Благотворительные организации
             </TextBlock>
         </Button>
-        <Button Name="FondInfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" >
+        <Button Name="FondInfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" Click="FondInfoBtn_Click">
             Инвентарь
         </Button>
     </Grid>

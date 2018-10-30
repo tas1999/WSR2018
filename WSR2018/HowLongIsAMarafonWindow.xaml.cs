@@ -15,18 +15,14 @@ using System.Windows.Shapes;
 namespace WSR2018
 {
     /// <summary>
-    /// Логика взаимодействия для AdministratorMenuWindow.xaml
+    /// Логика взаимодействия для HowLongIsAMarafonWindow.xaml
     /// </summary>
-    public partial class AdministratorMenuWindow : Window
+    public partial class HowLongIsAMarafonWindow : Window
     {
-        public AdministratorMenuWindow()
+        public HowLongIsAMarafonWindow()
         {
             InitializeComponent();
-        }
-
-        private void FondInfoBtn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowsControler.GoTo(new InventarWindow());
+            ServerController.HowLongFill(HowLongTabControl);
         }
     }
 }

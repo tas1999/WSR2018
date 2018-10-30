@@ -15,23 +15,19 @@ using System.Windows.Shapes;
 namespace WSR2018
 {
     /// <summary>
-    /// Логика взаимодействия для FindOutMoreInformation.xaml
+    /// Логика взаимодействия для InventarImportWindow.xaml
     /// </summary>
-    public partial class FindOutMoreInformation : Window
+    public partial class InventarImportWindow : Window
     {
-        public FindOutMoreInformation()
+        public InventarImportWindow()
         {
             InitializeComponent();
+            ServerController.InventarImport(InventsImport);
         }
 
-        private void FondInfoBtn_Click(object sender, RoutedEventArgs e)
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            WindowsControler.GoTo(new ListOfCharities());
-        }
-
-        private void HowLongBtn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowsControler.GoTo(new HowLongIsAMarafonWindow());
+            ServerController.InventarExsport(InventsImport);
         }
     }
 }

@@ -70,6 +70,12 @@
     <Compile Include="FindOutMoreInformation.xaml.cs">
       <DependentUpon>FindOutMoreInformation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HowLongIsAMarafonWindow.xaml.cs">
+      <DependentUpon>HowLongIsAMarafonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InventarImportWindow.xaml.cs">
+      <DependentUpon>InventarImportWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InventarWindow.xaml.cs">
       <DependentUpon>InventarWindow.xaml</DependentUpon>
     </Compile>
@@ -136,6 +142,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FindOutMoreInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HowLongIsAMarafonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InventarImportWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -246,6 +260,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\cross-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\how-long-is-a-marathon-images\airbus-a380.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\bus.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\capybara.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\f1-car.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\football-field.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\horse.png" />
+    <Resource Include="Img\how-long-is-a-marathon-images\jaguar.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\pair-of-havaianas.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\ronaldinho.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\sloth.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\slug.jpg" />
+    <Resource Include="Img\how-long-is-a-marathon-images\worm.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

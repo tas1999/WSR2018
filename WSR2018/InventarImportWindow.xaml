@@ -1,0 +1,47 @@
+﻿<Window x:Class="WSR2018.InventarImportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR2018"
+        mc:Ignorable="d"
+        Title="InventarImportWindow" Height="450" Width="800">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="40"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainBack}"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Поступление инвентаря</TextBlock>
+        <FlowDocumentScrollViewer Grid.Row="6" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <FlowDocument >
+                <Table Name="InventsImport">
+
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+        
+        <Grid Grid.Row="9" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="SaveBtn" Grid.Column="0" Style="{StaticResource BaseButtonStyle}" Height="20" Width="100" Click="SaveBtn_Click">Сохранить</Button>
+            
+        </Grid>
+    </Grid>
+</Window>

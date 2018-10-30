@@ -31,179 +31,50 @@
             <TextBlock FontWeight="Bold">Всего зарегестрировано бегунов на марафон:</TextBlock>
             <TextBlock Name="RunnerRegCountTBlock">123</TextBlock>
         </TextBlock>
-        <DataGrid Name="InventStatistic" Grid.Row="7" Grid.Column="1" SelectionMode="Single" IsReadOnly="True"></DataGrid>
+        <FlowDocumentScrollViewer Grid.Row="7" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <FlowDocument >
+                <Table Name="InventStatistic">
+
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
         <Popup Name="ReportPopup" PlacementTarget="{Binding ElementName=MainGrid}" StaysOpen="True" Placement="Center">
-            <Grid Background="White">
-                <FlowDocumentScrollViewer VerticalScrollBarVisibility="Disabled" >
-                    <FlowDocument>
-                        <Table Name="ReportTable">
-                            <!--<Table.Columns>
-                                <TableColumn/>
-                                <TableColumn/>
-                                <TableColumn/>
-                                <TableColumn/>
-                            </Table.Columns>
-                            <TableRowGroup >
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Наименование
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Остаток
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Необходимо
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Надо заказать
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Номер бегуна
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            RFID браслет
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Бейсболка
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Бутылка воды
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Футболка
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell>
-                                        <Paragraph>
-                                            Сувенирный буклет
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Paragraph>
-                                            0
-                                        </Paragraph>
-                                    </TableCell>
-                                </TableRow>
-                            </TableRowGroup>-->
-                        </Table>
-                    </FlowDocument>
-                </FlowDocumentScrollViewer>
-            </Grid>
-            
+            <Border Background="White" BorderThickness="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition />
+                        <RowDefinition Height="10"/>
+                        <RowDefinition />
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="500"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource TittleStyle}" >Отчёт</TextBlock>
+
+                    <FlowDocumentScrollViewer Name="PrintDocum" Grid.Row="4" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                            <FlowDocument >
+                                <Table Name="ReportTable">
+
+                                </Table>
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                    
+                    <Button Name="Close" Grid.Row="1" Grid.Column="3" Foreground="Red" Background="White" BorderThickness="0" FontSize="20" Click="Close_Click">x</Button>
+                    <Button Name="PrintBtn" Grid.Row="6" Grid.Column="1" Width="100" HorizontalAlignment="Left" Height="30" Style="{StaticResource BaseButtonStyle}" Click="PrintBtn_Click">Печать</Button>
+                </Grid>
+            </Border>
+
         </Popup>
         <Grid Grid.Row="9" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -212,7 +83,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Name="ReportBtn" Grid.Column="0" Style="{StaticResource BaseButtonStyle}" Height="20" Width="100" Click="ReportBtn_Click">Отчёт</Button>
-            <Button Grid.Column="2" Style="{StaticResource BaseButtonStyle}" Height="20" Width="100">Поступление</Button>
+            <Button Name="InventarImportBtn" Grid.Column="2" Style="{StaticResource BaseButtonStyle}" Height="20" Width="100" Click="InventarImportBtn_Click">Поступление</Button>
         </Grid>
     </Grid>
 </Window>

@@ -22,27 +22,35 @@ namespace WSR2018
         public InventarWindow()
         {
             InitializeComponent();
-            ServerController.GetInventar(InventStatistic);
+            RunnerRegCountTBlock.Text = ServerController.GetInventar(InventStatistic, ReportTable).ToString();
         }
 
         private void ReportBtn_Click(object sender, RoutedEventArgs e)
         {
             ReportPopup.IsOpen = true;
-            ReportTable.Columns.Add(new TableColumn());
-            ReportTable.Columns.Add(new TableColumn());
-            ReportTable.Columns.Add(new TableColumn());
-            ReportTable.Columns.Add(new TableColumn());
-            TableRowGroup tableRowGroup = new TableRowGroup();
-            for (int y =0; y < 5; y++)
+            
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            ReportPopup.IsOpen = false;
+        }
+
+        private void PrintBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            ReportPopup.IsOpen = false;
+            if (printDialog.ShowDialog() == true)
             {
-                TableRow tableRow = new TableRow();
-                for (int x = 0; x < 5; x++)
-                {
-                    tableRow.Cells.Add(new TableCell(new Paragraph(new Run(y + x.ToString()))));
-                }
-                tableRowGroup.Rows.Add(tableRow);
+                printDialog.PrintDocument(((IDocumentPaginatorSource)PrintDocum.Document).DocumentPaginator, "Печать отчёта");
             }
-            ReportTable.RowGroups.Add(tableRowGroup);
+            ReportPopup.IsOpen = true;
+                
+        }
+
+        private void InventarImportBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.GoTo(new InventarImportWindow());
         }
     }
 }

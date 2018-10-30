@@ -9,9 +9,9 @@
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
         <RowDefinition Height="auto"/>
-        <RowDefinition/>
-        <RowDefinition/>
-        <RowDefinition/>
+        <RowDefinition MaxHeight="50"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition MaxHeight="50"/>
         <RowDefinition MinHeight="80"/>
         <RowDefinition Height="20"/>
         <RowDefinition MinHeight="80"/>

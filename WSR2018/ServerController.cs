@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using WSR2018.MarathonSkillsBDTableAdapters;
@@ -20,23 +21,26 @@ namespace WSR2018
         static public string Email { get => email; }
         static short yearMar = 2015;
         static UserTableAdapter userTableAdapter = new UserTableAdapter();
+        static ItemTableAdapter itemTableAdapter = new ItemTableAdapter();
         static EventTableAdapter eventTableAdapter = new EventTableAdapter();
-        
+        static SpeedTableAdapter speedTableAdapter = new SpeedTableAdapter();
         static GenderTableAdapter genderTableAdapter = new GenderTableAdapter();
         static RunnerTableAdapter runnerTableAdapter = new RunnerTableAdapter();
-        static ItemTableAdapter itemTableAdapter = new ItemTableAdapter();
         static CountryTableAdapter CountryTableAdapter = new CountryTableAdapter();
         static CharityTableAdapter charityTableAdapter = new CharityTableAdapter();
+        static DistanceTableAdapter distanceTableAdapter = new DistanceTableAdapter();
         static MarathonTableAdapter marathonTableAdapter = new MarathonTableAdapter();
         static EventRunnerTableAdapter eventRunnerTableAdapter = new EventRunnerTableAdapter();
         static RegistrationTableAdapter registrationTableAdapter = new RegistrationTableAdapter();
         static MarathonSkillsBD.UserDataTable userDataTable = new MarathonSkillsBD.UserDataTable();
+        static MarathonSkillsBD.ItemDataTable itemDataTable = new MarathonSkillsBD.ItemDataTable();
         static MarathonSkillsBD.EventDataTable eventDataTable = new MarathonSkillsBD.EventDataTable();
+        static MarathonSkillsBD.SpeedDataTable speedDataTable = new MarathonSkillsBD.SpeedDataTable();
         static MarathonSkillsBD.GenderDataTable genderDataTable = new MarathonSkillsBD.GenderDataTable();
         static MarathonSkillsBD.RunnerDataTable runnerDataTable = new MarathonSkillsBD.RunnerDataTable();
-        static MarathonSkillsBD.ItemDataTable itemDataTable = new MarathonSkillsBD.ItemDataTable();
         static MarathonSkillsBD.CountryDataTable countryDataTable = new MarathonSkillsBD.CountryDataTable();
         static MarathonSkillsBD.CharityDataTable charityDataTable = new MarathonSkillsBD.CharityDataTable();
+        static MarathonSkillsBD.DistanceDataTable distanceDataTable = new MarathonSkillsBD.DistanceDataTable();
         static MarathonSkillsBD.MarathonDataTable marathonDataTable = new MarathonSkillsBD.MarathonDataTable();
         static MarathonSkillsBD.EventRunnerDataTable eventRunnerDataTableIdRunner = new MarathonSkillsBD.EventRunnerDataTable();
         static MarathonSkillsBD.EventRunnerDataTable eventRunnerDataTableAllRunnre = new MarathonSkillsBD.EventRunnerDataTable();
@@ -292,7 +296,7 @@ namespace WSR2018
                 return "более 70";
             }
         }
-        static public DataGrid GetInventar(DataGrid dataGrid)
+        static public int GetInventar(Table dataGrid,Table ReportTable)
         {
             registrationTableAdapter.FillByYearHeldArgAndRaceKitOptionIdArg(registrationDataTable, yearMar, "A");
             int selectTypA = registrationDataTable.Count;
@@ -300,153 +304,235 @@ namespace WSR2018
             int selectTypB = registrationDataTable.Count;
             registrationTableAdapter.FillByYearHeldArgAndRaceKitOptionIdArg(registrationDataTable, yearMar, "C");
             int selectTypC = registrationDataTable.Count;
+
             itemTableAdapter.Fill(itemDataTable);
-            
-            Binding binding = new Binding("[0]");
-
-            dataGrid.Columns.Add(new DataGridTextColumn()
-            {
-                Header = "Комплект",
-                Binding = new Binding("[0]"),
-                
-            });
-            dataGrid.Columns.Add(new DataGridTemplateColumn()
-            {
-                Header = "Тип А",
-                CellTemplate = ColumnDataTemplate("[1]")
-            });
-            dataGrid.Columns.Add(new DataGridTemplateColumn()
-            {
-                Header = "Тип B",
-                CellTemplate = ColumnDataTemplate("[2]")
-            });
-            dataGrid.Columns.Add(new DataGridTemplateColumn()
-            {
-                Header = "Тип C",
-                CellTemplate = ColumnDataTemplate("[3]")
-            });
-            dataGrid.Columns.Add(new DataGridTextColumn()
-            {
-                Header = "Необходимо",
-                Binding = new Binding("[4]")
-            });
-            dataGrid.Columns.Add(new DataGridTextColumn()
-            {
-                Header = "Остаток",
-                Binding = new Binding("[5]")
-
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                "Выбрало данный вариант",
-                selectTypA.ToString(),
-                selectTypB.ToString(),
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                "0"
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[0].ItemName,
-                selectTypA.ToString(),
-                selectTypB.ToString(),
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[0].ItemCount.ToString()
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[1].ItemName,
-                selectTypA.ToString(),
-                selectTypB.ToString(),
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[1].ItemCount.ToString()
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[2].ItemName,
-                "ErrorImg",
-                selectTypB.ToString(),
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[2].ItemCount.ToString()
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[3].ItemName,
-                "ErrorImg",
-                selectTypB.ToString(),
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[3].ItemCount.ToString()
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[4].ItemName,
-                "ErrorImg",
-                "ErrorImg",
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[4].ItemCount.ToString()
-            });
-            dataGrid.Items.Add(new string[]
-            {
-                itemDataTable[5].ItemName,
-                "ErrorImg",
-                "ErrorImg",
-                selectTypC.ToString(),
-                selectTypA + selectTypB + selectTypC + "",
-                itemDataTable[5].ItemCount.ToString()
-            });
-            return dataGrid;
+            ReportTableCreator(ReportTable, selectTypA, selectTypB, selectTypC);
+            InventarTableCreator(dataGrid, selectTypA, selectTypB, selectTypC);
+            registrationTableAdapter.FillByYearHeldArg(registrationDataTable, yearMar);
+            return registrationDataTable.Count;
         }
-        static public DataTemplate ColumnDataTemplate(string path)
+        static void ReportTableCreator(Table ReportTable , int selectTypA, int selectTypB, int selectTypC)
         {
-
-            Binding bindDateLecture = new Binding()
+            ReportTable.Columns.Add(new TableColumn());
+            ReportTable.Columns.Add(new TableColumn());
+            ReportTable.Columns.Add(new TableColumn());
+            ReportTable.Columns.Add(new TableColumn());
+            TableRowGroup tableRowGroup = new TableRowGroup();
+            TableRow tableRow1 = new TableRow();
+            tableRow1.Cells.Add(new TableCell(new Paragraph(new Run("Наименование")))
             {
-                Path = new PropertyPath(path)
-            };
-
-            var DateDayWithDateLecture = new FrameworkElementFactory(typeof(TextBlock));
-            DateDayWithDateLecture.SetBinding(TextBlock.TextProperty, bindDateLecture);
-            DateDayWithDateLecture.SetValue(TextBlock.HorizontalAlignmentProperty, HorizontalAlignment.Center);
-
-            DateDayWithDateLecture.SetValue(TextBlock.BackgroundProperty, new SolidColorBrush(Colors.White));
-            DateDayWithDateLecture.SetValue(TextBlock.HeightProperty, 40.0);
-            DateDayWithDateLecture.SetValue(TextBlock.WidthProperty, 100.0);
-            Style style = new Style();
-            
-            Trigger trigger = new Trigger()
+                Background = new SolidColorBrush(Colors.Aqua)
+            }
+                     );
+            tableRow1.Cells.Add(new TableCell(new Paragraph(new Run("остаток")))
             {
-                Property = TextBlock.TextProperty,
-                Value = "ErrorImg"
-            };
-            trigger.Setters.Add(new Setter()
+                Background = new SolidColorBrush(Colors.Aqua)
+            }
+                     );
+            tableRow1.Cells.Add(new TableCell(new Paragraph(new Run("необходимо")))
             {
-                Property = TextBlock.VisibilityProperty,
-                Value = Visibility.Collapsed
-            });
-            style.Triggers.Add(trigger);
+                Background = new SolidColorBrush(Colors.Aqua)
+            }
+                     );
+            tableRow1.Cells.Add(new TableCell(new Paragraph(new Run("Надо заказать")))
+            {
+                Background = new SolidColorBrush(Colors.Aqua)
+            }
+                     );
+            tableRowGroup.Rows.Add(tableRow1);
+            for (int y = 0; y < 6; y++)
+            {
+                TableRow tableRow = new TableRow();
+                tableRow.Cells.Add(new TableCell(new Paragraph(new Run(itemDataTable[y].ItemName))));
+                tableRow.Cells.Add(new TableCell(new Paragraph(new Run(itemDataTable[y].ItemCount.ToString()))));
+                if (y < 2) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypA + selectTypB + selectTypC + ""))));
+                else if (y < 4) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypB + selectTypC + ""))));
+                else tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypC + ""))));
 
-            DateDayWithDateLecture.SetValue(TextBlock.StyleProperty, style);
+                if (y < 2) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypA + selectTypB + selectTypC - itemDataTable[y].ItemCount + ""))));
+                else if (y < 4) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypB + selectTypC - itemDataTable[y].ItemCount + ""))));
+                else tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypC - itemDataTable[y].ItemCount + ""))));
 
-            var DateMonthWithNumberLectur = new FrameworkElementFactory(typeof(Image));
-            DateMonthWithNumberLectur.SetValue(Image.SourceProperty, 
-                new BitmapImage(new Uri(@"C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\cross-icon.png")));
-            DateMonthWithNumberLectur.SetValue(Image.HeightProperty, 30.0);
-            DateDayWithDateLecture.SetValue(Image.WidthProperty, 30.0);
-
-
-            var grid2FactoryField = new FrameworkElementFactory(typeof(Grid));
-            grid2FactoryField.AppendChild(DateMonthWithNumberLectur);
-            grid2FactoryField.AppendChild(DateDayWithDateLecture);
-            
-            DataTemplate gridFieldTemplate = new DataTemplate();
-            gridFieldTemplate.VisualTree = grid2FactoryField;
-            return gridFieldTemplate;
+                tableRowGroup.Rows.Add(tableRow);
+            }
+            ReportTable.RowGroups.Add(tableRowGroup);
         }
+        static void InventarTableCreator(Table dataGrid, int selectTypA, int selectTypB, int selectTypC)
+        {
+            TableRowGroup tableRowGroup1 = new TableRowGroup();
+            dataGrid.Columns.Add(new TableColumn());
+            dataGrid.Columns.Add(new TableColumn());
+            dataGrid.Columns.Add(new TableColumn());
+            dataGrid.Columns.Add(new TableColumn());
+            dataGrid.Columns.Add(new TableColumn());
+            dataGrid.Columns.Add(new TableColumn());
+            TableRow tableRow2 = new TableRow();
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Комплект"))));
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Тип А"))));
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Тип B"))));
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Тип C"))));
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Необходимо"))));
+            tableRow2.Cells.Add(new TableCell(new Paragraph(new Run("Остаток"))));
+            tableRowGroup1.Rows.Add(tableRow2);
 
+            BitmapImage image = new BitmapImage(new Uri(@"C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\cross-icon.png"));
+            for (int y = -1; y < 6; y++)
+            {
+                TableRow tableRow = new TableRow();
+                if (y > -1) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(itemDataTable[y].ItemName))));
+                else tableRow.Cells.Add(new TableCell(new Paragraph(new Run("Выбрало данный вариант"))));
+                if (y < 2) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypA.ToString()))));
+                else tableRow.Cells.Add(new TableCell(new BlockUIContainer(new Image()
+                {
+                    Source = image,
+                    Height = 30.0,
+                    HorizontalAlignment = HorizontalAlignment.Left
+                    
+                })));
+                if (y < 4) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypB.ToString()))));
+                else tableRow.Cells.Add(new TableCell(new BlockUIContainer(new Image()
+                {
+                    Source = image,
+                    Height = 30.0,
+                    HorizontalAlignment = HorizontalAlignment.Left
+                })));
+                tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypC.ToString()))));
+                if (y < 2) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypA + selectTypB + selectTypC + ""))));
+                else if (y < 4) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypB.ToString(selectTypB + selectTypC + "")))));
+                else tableRow.Cells.Add(new TableCell(new Paragraph(new Run(selectTypB.ToString(selectTypC + "")))));
+                if (y > -1) tableRow.Cells.Add(new TableCell(new Paragraph(new Run(itemDataTable[y].ItemCount.ToString()))));
+                else tableRow.Cells.Add(new TableCell(new Paragraph(new Run("0"))));
+                tableRowGroup1.Rows.Add(tableRow);
+            }
+            dataGrid.RowGroups.Add(tableRowGroup1);
+        }
+        static public void InventarImport(Table inventarImport)
+        {
+            itemTableAdapter.Fill(itemDataTable);
+            TableRowGroup tableRowGroup = new TableRowGroup();
+            TableRow tableRowMain = new TableRow();
+            tableRowMain.Cells.Add(new TableCell(new Paragraph(new Run("Наименование"))));
+            tableRowMain.Cells.Add(new TableCell(new Paragraph(new Run("Поступление"))));
+            tableRowGroup.Rows.Add(tableRowMain);
+            for (int y =0; y < itemDataTable.Count; y++)
+            {
+                TableRow tableRow = new TableRow();
+                tableRow.Cells.Add(new TableCell(new Paragraph(new Run(itemDataTable[y].ItemName))));
+                tableRow.Cells.Add(new TableCell(new BlockUIContainer(new TextBox()
+                {
+                    Name = "I" + itemDataTable[y].ItemId
+                })));
+                tableRowGroup.Rows.Add(tableRow);
+            }
+            inventarImport.RowGroups.Add(tableRowGroup);
+        }
+        static public void InventarExsport(Table inventarImport)
+        {
+            itemTableAdapter.Fill(itemDataTable);
+            for (int y = 0; y < itemDataTable.Count; y++)
+            {
+                var go1 = inventarImport.FindName("I" + itemDataTable[y].ItemId);
+                for(int i =1; i < inventarImport.RowGroups[0].Rows.Count; i++)
+                {
+                    var g = inventarImport.RowGroups[0].Rows[i].Cells[1].Blocks.ToList();
+                    var g1 = (BlockUIContainer)g[0];
+                    var t = (TextBox)g1.Child;
+                    if (t.Name == "I" + itemDataTable[y].ItemId)
+                    {
+                       string countString = t.Text;
+                       if (int.TryParse(countString, out int count))
+                            itemDataTable[y].ItemCount = count + itemDataTable[y].ItemCount;
+                    }
+                }
+            }
+            if(itemTableAdapter.Update(itemDataTable) > 0)
+                MessageBox.Show("Данные внесены");
+        }
+        static public void HowLongFill(TabControl tab)
+        {
+            speedTableAdapter.Fill(speedDataTable);
+            distanceTableAdapter.Fill(distanceDataTable);
+            TabItem speedtabItem = new TabItem();
+            speedtabItem.Header = "Speed";
+            TabItem distancetabItem = new TabItem();
+            distancetabItem.Header = "Distance";
+            TabControl speedtabControl = new TabControl();
+            speedtabControl.TabStripPlacement = Dock.Left;
+            TabControl distancetabControl = new TabControl();
+            distancetabControl.TabStripPlacement = Dock.Left;
+            foreach (var speedRow in speedDataTable)
+            {
+                speedtabControl.Items.Add
+                (
+                    TabItemCreator(
+                    speedRow.Image,
+                    speedRow.Name,
+                    speedRow.Name
+                    + " travels at "
+                    + speedRow.Top_Speed
+                    + " so would complete the marathon in "
+                    + yearMar)
+                );
+            }
+            foreach (var distance in distanceDataTable)
+            {
+                distancetabControl.Items.Add
+                (
+                    TabItemCreator(
+                    distance.Image,
+                    distance.Name,
+                    distance.Name
+                    + " is "
+                    + distance.Length
+                    + " in length so "
+                    + yearMar 
+                    + " would fit into the marathon length ")
+                );
+            }
+            speedtabItem.Content = speedtabControl;
+            distancetabItem.Content = distancetabControl;
+            tab.Items.Add(speedtabItem);
+            tab.Items.Add(distancetabItem);
+        }
+        static public TabItem TabItemCreator(string Image, string Name, string Text )
+        {
+                BitmapImage bitmapImage = new BitmapImage(
+                    new Uri(@"C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\how-long-is-a-marathon-images\"
+                            + Image));
+                TabItem tabItem = new TabItem();
+                StackPanel hederStackPanel = new StackPanel();
+                hederStackPanel.Orientation = Orientation.Horizontal;
+                hederStackPanel.Children.Add(new Image()
+                {
+                    Source = bitmapImage,
+                    Height = 50,
+                    Width = 50
+                });
+                hederStackPanel.Children.Add(new TextBlock()
+                {
+                    Text = Name
+                });
+                tabItem.Header = hederStackPanel;
+                StackPanel contentStackPanel = new StackPanel();
+                contentStackPanel.Orientation = Orientation.Vertical;
+                contentStackPanel.Children.Add(new TextBlock()
+                {
+                    Text = Name,
+                    Style = (Style)Application.Current.Resources["TittleStyle"]
+                });
+                contentStackPanel.Children.Add(new Image()
+                {
+                    Source = bitmapImage,
+                    Height = 200,
+                    Width = 200
+                });
+                contentStackPanel.Children.Add(new TextBlock()
+                {
+                    Text = Text,
+                    Style = (Style)Application.Current.Resources["TextWrapStyle"]
+                });
+                tabItem.Content = contentStackPanel;
+            return tabItem;
+        }
     }
 }

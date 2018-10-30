@@ -47,8 +47,14 @@
             <TextBlock FontWeight="Bold" Margin="0,0,5,0">Возрастная категория:</TextBlock>
             <TextBlock Name="OldTBlock">18-19</TextBlock>
         </StackPanel>
-        <DataGrid Name="StatisticDGrid" Grid.Row="10" Grid.ColumnSpan="3" CanUserSortColumns="False" IsReadOnly="True">
-
+        <DataGrid Name="StatisticDGrid" AutoGenerateColumns="False" Grid.Row="10" Grid.ColumnSpan="3" CanUserSortColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Марафон" Binding="{Binding Path=MarathonName}"/>
+                <DataGridTextColumn Header="Дистанция" Binding="{Binding Path=Distance}"/>
+                <DataGridTextColumn Header="Время" Binding="{Binding Path=RaceTime}"/>
+                <DataGridTextColumn Header="Общее место" Binding="{Binding Path=TopNumberAll}"/>
+                <DataGridTextColumn Header="Место по категории" Binding="{Binding Path=TopNumberCategority}"/>
+            </DataGrid.Columns>
         </DataGrid>
         <Button Name="ViewAllBtn" Style="{StaticResource BaseButtonStyle}" Grid.Column="1" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="#FF6D6D6D" FontSize="20" Click="ViewAllBtn_Click" >Показать все результаты</Button>
     </Grid>

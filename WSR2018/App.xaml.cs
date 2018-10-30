@@ -13,6 +13,7 @@ namespace WSR2018
     /// </summary>
     public partial class App : Application
     {
+        
         /// <summary>
         /// Метод вызывающий переход к начальному окну
         /// </summary>
@@ -21,6 +22,7 @@ namespace WSR2018
         private void BackMain_Click(object sender, RoutedEventArgs e)
         {
             WindowsControler.ReturnInStart();
+             
         }
         /// <summary>
         /// Метод вызывающий переход к меню бегуна
@@ -58,6 +60,11 @@ namespace WSR2018
         private void BackToAdmin_Click(object sender, RoutedEventArgs e)
         {
             WindowsControler.GoTo(new AdministratorMenuWindow());
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.Back();
         }
     }
 }
