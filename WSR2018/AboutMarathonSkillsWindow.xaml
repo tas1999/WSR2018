@@ -46,11 +46,14 @@
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Row="0" Grid.ColumnSpan="3" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\teatro-municipal.jpg" Width="300" />
-            <Image Grid.Row="2" Grid.Column="0" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\banco-banespa.jpg" Height="200" />
-            <Image Grid.Row="2" Grid.Column="2" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\ibirapuera-park-lake.jpg" Width="200" />
-            <Image Grid.Row="4" Grid.Column="0" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\marathon-image.jpg" Width="200"/>
-            <Image Grid.Row="4" Grid.Column="2" Source="C:\Users\WS2018\source\repos\WSR2018\WSR2018\Img\teatro-municipal.jpg" Width="200"/>
+
+            <Button Name="MapBtn" Grid.Row="0" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" Click="MapBtn_Click">
+            <Image Source=".\Img\marathon-skills-2016-marathon-map.jpg" Width="200"/>
+            </Button>
+            <Image Grid.Row="2" Grid.Column="0" Source=".\Img\banco-banespa.jpg" Height="200" />
+            <Image Grid.Row="2" Grid.Column="2" Source=".\Img\ibirapuera-park-lake.jpg" Width="200" />
+            <Image Grid.Row="4" Grid.Column="0" Source=".\Img\marathon-image.jpg" Width="200"/>
+            <Image Grid.Row="4" Grid.Column="2" Source=".\Img\teatro-municipal.jpg" Width="200"/>
         </Grid>
         <ScrollViewer Grid.Row="4" Grid.Column="3" Height="400">
             <TextBlock Foreground="#FF6D6D6D" Style="{StaticResource TextWrapStyle}">

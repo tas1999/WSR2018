@@ -33,5 +33,10 @@ namespace WSR2018
         {
             WindowsControler.GoTo(new HowLongIsAMarafonWindow());
         }
+
+        private void MarafonInfo_Click(object sender, RoutedEventArgs e)
+        {
+            WindowsControler.GoTo(new AboutMarathonSkillsWindow());
+        }
     }
 }

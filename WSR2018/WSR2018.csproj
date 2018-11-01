@@ -61,6 +61,7 @@
     <Compile Include="AdministratorMenuWindow.xaml.cs">
       <DependentUpon>AdministratorMenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Charity.cs" />
     <Compile Include="CoordinatorMenuWindow.xaml.cs">
       <DependentUpon>CoordinatorMenuWindow.xaml</DependentUpon>
     </Compile>
@@ -72,6 +73,9 @@
     </Compile>
     <Compile Include="HowLongIsAMarafonWindow.xaml.cs">
       <DependentUpon>HowLongIsAMarafonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractiveMapWindow.xaml.cs">
+      <DependentUpon>InteractiveMapWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="InventarImportWindow.xaml.cs">
       <DependentUpon>InventarImportWindow.xaml</DependentUpon>
@@ -146,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HowLongIsAMarafonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InteractiveMapWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,6 +241,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Img\marathon-skills-2016-charity-data\charity-descriptions.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Img\marathon-skills-2016-charity-data\charity-logos.pptx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Img\marathon-skills-2016-charity-data\Thumbs.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="MarathonSkillsBD.xsc">
       <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
     </None>
@@ -259,9 +276,70 @@
     <Content Include="Img\ibirapuera-park-lake.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Img\map-icons\map-icon-drinks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\map-icons\map-icon-energy-bars.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\map-icons\map-icon-information.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\map-icons\map-icon-medical.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\map-icons\map-icon-start.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\map-icons\map-icon-toilets.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Img\marathon-image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Img\marathon-skills-2016-charity-data\arise-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\aves-do-brazil-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\clara-santos-oliveira-institute-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\conquer-cancer-brazil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\diabetes-brazil-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\heart-health-sao-paulo-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\human-rights-centre-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\oxfam-international-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\querstadtein-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\save-the-children-fund-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\stay-pumped-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\the-red-cross-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\upbeat-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-charity-data\wwsm-rescue-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Img\marathon-skills-2016-marathon-map.jpg" />
     <Content Include="Img\teatro-municipal.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

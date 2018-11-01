@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace WSR2018
 {
     /// <summary>
-    /// Логика взаимодействия для AboutMarathonSkillsWindow.xaml
+    /// Логика взаимодействия для InteractiveMapWindow.xaml
     /// </summary>
-    public partial class AboutMarathonSkillsWindow : Window
+    public partial class InteractiveMapWindow : Window
     {
-        public AboutMarathonSkillsWindow()
+        public InteractiveMapWindow()
         {
             InitializeComponent();
-        }
-
-        private void MapBtn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowsControler.GoTo(new InteractiveMapWindow());
         }
     }
 }

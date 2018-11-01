@@ -29,7 +29,7 @@
         <ContentControl Grid.Row="0" Grid.ColumnSpan="5"  Style="{StaticResource HatMainWithoutLogout}"/>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="11" Style="{StaticResource TittleStyle}">Подробная информация</TextBlock>
 
-        <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">Marathon Skills 2016</Button>
+        <Button Name="MarafonInfo" Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="1" FontSize="30" Background="#FFF2F2F2" Click="MarafonInfo_Click">Marathon Skills 2016</Button>
         <Button Name="HowLongBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="4" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" Click="HowLongBtn_Click">Насколько долгий марафон</Button>
         <Button Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="1" FontSize="30" Background="#FFF2F2F2">Предыдущие результаты</Button>
         <Button Name="FondInfoBtn" Style="{StaticResource BaseButtonStyle}" Grid.Row="6" Grid.Column="3" FontSize="30" Background="#FFF2F2F2" Click="FondInfoBtn_Click">
