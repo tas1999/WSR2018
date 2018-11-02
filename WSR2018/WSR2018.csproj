@@ -247,9 +247,6 @@
     <None Include="Img\marathon-skills-2016-charity-data\charity-logos.pptx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Img\marathon-skills-2016-charity-data\Thumbs.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="MarathonSkillsBD.xsc">
       <DependentUpon>MarathonSkillsBD.xsd</DependentUpon>
     </None>
@@ -276,24 +273,24 @@
     <Content Include="Img\ibirapuera-park-lake.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Img\map-icons\map-icon-drinks.png">
+    <Content Include="Img\map-icons\map-icon-drinks.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Img\map-icons\map-icon-energy-bars.png">
+    </Content>
+    <Content Include="Img\map-icons\map-icon-energy-bars.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Img\map-icons\map-icon-information.png">
+    </Content>
+    <Content Include="Img\map-icons\map-icon-information.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Img\map-icons\map-icon-medical.png">
+    </Content>
+    <Content Include="Img\map-icons\map-icon-medical.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Img\map-icons\map-icon-start.png">
+    </Content>
+    <Content Include="Img\map-icons\map-icon-start.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Img\map-icons\map-icon-toilets.png">
+    </Content>
+    <Content Include="Img\map-icons\map-icon-toilets.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="Img\marathon-image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

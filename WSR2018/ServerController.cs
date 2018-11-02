@@ -27,6 +27,7 @@ namespace WSR2018
         static SpeedTableAdapter speedTableAdapter = new SpeedTableAdapter();
         static GenderTableAdapter genderTableAdapter = new GenderTableAdapter();
         static RunnerTableAdapter runnerTableAdapter = new RunnerTableAdapter();
+        static MapDataTableAdapter mapDataTableAdapter = new MapDataTableAdapter();
         static CountryTableAdapter CountryTableAdapter = new CountryTableAdapter();
         static CharityTableAdapter charityTableAdapter = new CharityTableAdapter();
         static DistanceTableAdapter distanceTableAdapter = new DistanceTableAdapter();
@@ -39,6 +40,7 @@ namespace WSR2018
         static MarathonSkillsBD.SpeedDataTable speedDataTable = new MarathonSkillsBD.SpeedDataTable();
         static MarathonSkillsBD.GenderDataTable genderDataTable = new MarathonSkillsBD.GenderDataTable();
         static MarathonSkillsBD.RunnerDataTable runnerDataTable = new MarathonSkillsBD.RunnerDataTable();
+        static MarathonSkillsBD.MapDataDataTable mapDataDataTable = new MarathonSkillsBD.MapDataDataTable();
         static MarathonSkillsBD.CountryDataTable countryDataTable = new MarathonSkillsBD.CountryDataTable();
         static MarathonSkillsBD.CharityDataTable charityDataTable = new MarathonSkillsBD.CharityDataTable();
         static MarathonSkillsBD.DistanceDataTable distanceDataTable = new MarathonSkillsBD.DistanceDataTable();
@@ -199,7 +201,8 @@ namespace WSR2018
         /// <param name="Cost">Взнос</param>
         /// <param name="CharityId">Id благотворительного фонда</param>
         /// <param name="SponsorshipTarget">Сумма спонсорства</param>
-        static public void RegistrationRunnerOnMarafon(string RaceKitOptionId, double Cost, int CharityId, double SponsorshipTarget)
+        static public void RegistrationRunnerOnMarafon(string RaceKitOptionId, 
+            double Cost, int CharityId, double SponsorshipTarget)
         {
             registrationTableAdapter.Fill(registrationDataTable);
             var registration = registrationDataTable.NewRegistrationRow();
@@ -535,6 +538,80 @@ namespace WSR2018
                 });
                 tabItem.Content = contentStackPanel;
             return tabItem;
+        }
+        static public StackPanel CheckpointStatus(string number, StackPanel stackPanel)
+        {
+            stackPanel.Children.Clear();
+            
+            mapDataTableAdapter.Fill(mapDataDataTable);
+            var checkRows = mapDataDataTable.Where(m => m.Checkpoint == "Checkpoint " + number).ToList()[0];
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = "Checkpoint " + number,
+                Style = (Style)Application.Current.Resources["TextStyle"]
+            });
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = "Landmark:",
+                Style = (Style)Application.Current.Resources["TextStyle"]
+            });
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = checkRows.Landmark,
+                Style = (Style)Application.Current.Resources["TextWrapStyle"]
+            });
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = "Servise Provided:",
+                Style = (Style)Application.Current.Resources["TextStyle"]
+            });
+            for (int i = 2; i < checkRows.ItemArray.Count(); i++)
+            {
+                var test = checkRows.ItemArray[i].ToString();
+                if (checkRows.ItemArray[i].ToString() == "Yes")
+                {
+                    StackPanel stackPanelHorisontal = new StackPanel();
+                    stackPanelHorisontal.Orientation = Orientation.Horizontal;
+                    string columName = mapDataDataTable.Columns[i].ColumnName;
+                    string ImgName = columName.Replace(' ', '-').ToLower();
+                    stackPanelHorisontal.Children.Add(new Image()
+                    {
+                        Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Img\map-icons\map-icon-" + ImgName + ".png")),
+                        Width = 50
+                    });
+                    stackPanelHorisontal.Children.Add(new TextBlock()
+                    {
+                        Text = columName,
+                        Style = (Style)Application.Current.Resources["TextStyle"]
+                    });
+                    stackPanel.Children.Add(stackPanelHorisontal);
+                }
+            }
+            return stackPanel;
+
+        }
+        static public StackPanel StartpointStatus(string number, StackPanel stackPanel)
+        {
+            string distans = null;
+            if (number == "1")
+                distans = "Samba Full Marathon";
+            else if (number == "2")
+                distans = "Joungo Half Marathon";
+            else if (number == "3")
+                distans = "Capoeira 5km Fun Run";
+            stackPanel.Children.Clear();
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = "Race Start",
+                Style = (Style)Application.Current.Resources["TextStyle"]
+            });
+            stackPanel.Children.Add(new TextBlock()
+            {
+                Text = distans,
+                Style = (Style)Application.Current.Resources["TextStyle"]
+            });
+            return stackPanel;
+
         }
     }
 }

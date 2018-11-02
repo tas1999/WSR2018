@@ -22,6 +22,25 @@ namespace WSR2018
         public InteractiveMapWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            CheckpointInfo.Visibility = Visibility.Hidden;
+        }
+
+        private void StartPoint_Click(object sender, RoutedEventArgs e)
+        {
+            CheckpointInfo.Visibility = Visibility.Visible;
+            ServerController.StartpointStatus(((Button)sender).DataContext.ToString(), ServisProvaiderSPanel);
+        }
+
+        private void Checkpoint_Click(object sender, RoutedEventArgs e)
+        {
+            CheckpointInfo.Visibility = Visibility.Visible;
+            ServerController.CheckpointStatus(((Button)sender).DataContext.ToString(), ServisProvaiderSPanel);
+            
         }
     }
 }
